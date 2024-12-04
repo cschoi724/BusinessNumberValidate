@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29C4C9252D005F6C006A1D48 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 29C4C9242D005F6C006A1D48 /* Swinject */; };
+		29C4C9282D005F86006A1D48 /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4C9272D005F86006A1D48 /* DataAssembly.swift */; };
+		29C4C92A2D005F90006A1D48 /* DomainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4C9292D005F90006A1D48 /* DomainAssembly.swift */; };
+		29C4C92C2D005F9A006A1D48 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4C92B2D005F9A006A1D48 /* PresentationAssembly.swift */; };
+		29C4C92E2D006164006A1D48 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4C92D2D006164006A1D48 /* DependencyInjector.swift */; };
 		29F8A4612D0035E9005521B4 /* BusinessNumberValidateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4602D0035E9005521B4 /* BusinessNumberValidateApp.swift */; };
-		29F8A4632D0035E9005521B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4622D0035E9005521B4 /* ContentView.swift */; };
 		29F8A4652D0035ED005521B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F8A4642D0035ED005521B4 /* Assets.xcassets */; };
 		29F8A4682D0035ED005521B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F8A4672D0035ED005521B4 /* Preview Assets.xcassets */; };
-		29F8A46A2D0035ED005521B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4692D0035ED005521B4 /* Persistence.swift */; };
 		29F8A46D2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A46B2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld */; };
 		29F8A4772D0035EE005521B4 /* BusinessNumberValidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4762D0035EE005521B4 /* BusinessNumberValidateTests.swift */; };
 		29F8A4812D0035EE005521B4 /* BusinessNumberValidateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4802D0035EE005521B4 /* BusinessNumberValidateUITests.swift */; };
 		29F8A4832D0035EE005521B4 /* BusinessNumberValidateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4822D0035EE005521B4 /* BusinessNumberValidateUITestsLaunchTests.swift */; };
+		29F8A49E2D003D52005521B4 /* BusinessStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A49D2D003D52005521B4 /* BusinessStatusView.swift */; };
+		29F8A4A12D003E91005521B4 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 29F8A4A02D003E91005521B4 /* ComposableArchitecture */; };
+		29F8A4A32D003EBD005521B4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4A22D003EBD005521B4 /* LoadingView.swift */; };
+		29F8A4A52D003ECD005521B4 /* BusinessStatusReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4A42D003ECD005521B4 /* BusinessStatusReducer.swift */; };
+		29F8A4AE2D0040B7005521B4 /* BusinessStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4AD2D0040B7005521B4 /* BusinessStatus.swift */; };
+		29F8A4B02D0040D0005521B4 /* BusinessStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4AF2D0040D0005521B4 /* BusinessStatusRepository.swift */; };
+		29F8A4B22D004108005521B4 /* FetchBusinessStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4B12D004108005521B4 /* FetchBusinessStatusUseCase.swift */; };
+		29F8A4B72D004B0B005521B4 /* BusinessStatusRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4B62D004B0B005521B4 /* BusinessStatusRepositoryImpl.swift */; };
+		29F8A4B92D004B51005521B4 /* BusinessStatusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4B82D004B51005521B4 /* BusinessStatusDTO.swift */; };
+		29F8A4BB2D004BFF005521B4 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4BA2D004BFF005521B4 /* ResponseDTO.swift */; };
+		29F8A4BE2D004DDB005521B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4BD2D004DDB005521B4 /* APIClient.swift */; };
+		29F8A4C02D004DE6005521B4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4BF2D004DE6005521B4 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,18 +51,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29C4C9272D005F86006A1D48 /* DataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
+		29C4C9292D005F90006A1D48 /* DomainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAssembly.swift; sourceTree = "<group>"; };
+		29C4C92B2D005F9A006A1D48 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
+		29C4C92D2D006164006A1D48 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		29F8A45D2D0035E9005521B4 /* BusinessNumberValidate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessNumberValidate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F8A4602D0035E9005521B4 /* BusinessNumberValidateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessNumberValidateApp.swift; sourceTree = "<group>"; };
-		29F8A4622D0035E9005521B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		29F8A4642D0035ED005521B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29F8A4672D0035ED005521B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		29F8A4692D0035ED005521B4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		29F8A46C2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusinessNumberValidate.xcdatamodel; sourceTree = "<group>"; };
 		29F8A4722D0035EE005521B4 /* BusinessNumberValidateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessNumberValidateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F8A4762D0035EE005521B4 /* BusinessNumberValidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessNumberValidateTests.swift; sourceTree = "<group>"; };
 		29F8A47C2D0035EE005521B4 /* BusinessNumberValidateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessNumberValidateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F8A4802D0035EE005521B4 /* BusinessNumberValidateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessNumberValidateUITests.swift; sourceTree = "<group>"; };
 		29F8A4822D0035EE005521B4 /* BusinessNumberValidateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessNumberValidateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29F8A49D2D003D52005521B4 /* BusinessStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatusView.swift; sourceTree = "<group>"; };
+		29F8A4A22D003EBD005521B4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		29F8A4A42D003ECD005521B4 /* BusinessStatusReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatusReducer.swift; sourceTree = "<group>"; };
+		29F8A4AD2D0040B7005521B4 /* BusinessStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatus.swift; sourceTree = "<group>"; };
+		29F8A4AF2D0040D0005521B4 /* BusinessStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatusRepository.swift; sourceTree = "<group>"; };
+		29F8A4B12D004108005521B4 /* FetchBusinessStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBusinessStatusUseCase.swift; sourceTree = "<group>"; };
+		29F8A4B62D004B0B005521B4 /* BusinessStatusRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatusRepositoryImpl.swift; sourceTree = "<group>"; };
+		29F8A4B82D004B51005521B4 /* BusinessStatusDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatusDTO.swift; sourceTree = "<group>"; };
+		29F8A4BA2D004BFF005521B4 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		29F8A4BD2D004DDB005521B4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		29F8A4BF2D004DE6005521B4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F8A4A12D003E91005521B4 /* ComposableArchitecture in Frameworks */,
+				29C4C9252D005F6C006A1D48 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +105,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29C4C9222D005ECE006A1D48 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				29C4C92D2D006164006A1D48 /* DependencyInjector.swift */,
+				29C4C9262D005F74006A1D48 /* Assembly */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		29C4C9262D005F74006A1D48 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				29C4C9272D005F86006A1D48 /* DataAssembly.swift */,
+				29C4C9292D005F90006A1D48 /* DomainAssembly.swift */,
+				29C4C92B2D005F9A006A1D48 /* PresentationAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		29F8A4542D0035E9005521B4 = {
 			isa = PBXGroup;
 			children = (
@@ -98,14 +147,10 @@
 		29F8A45F2D0035E9005521B4 /* BusinessNumberValidate */ = {
 			isa = PBXGroup;
 			children = (
+				29C4C9222D005ECE006A1D48 /* Dependency */,
 				29F8A4992D003B18005521B4 /* Presentation */,
 				29F8A48F2D0037F5005521B4 /* Domain */,
 				29F8A4932D003A6A005521B4 /* Data */,
-				29F8A4602D0035E9005521B4 /* BusinessNumberValidateApp.swift */,
-				29F8A4622D0035E9005521B4 /* ContentView.swift */,
-				29F8A4642D0035ED005521B4 /* Assets.xcassets */,
-				29F8A4692D0035ED005521B4 /* Persistence.swift */,
-				29F8A46B2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld */,
 				29F8A4942D003A72005521B4 /* Applications */,
 				29F8A4952D003A7A005521B4 /* Resources */,
 				29F8A4662D0035ED005521B4 /* Preview Content */,
@@ -141,9 +186,9 @@
 		29F8A48F2D0037F5005521B4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				29F8A4962D003A87005521B4 /* Interfaces */,
 				29F8A4912D003803005521B4 /* Entities */,
 				29F8A4902D0037FC005521B4 /* UseCases */,
+				29F8A4962D003A87005521B4 /* Interfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -151,6 +196,7 @@
 		29F8A4902D0037FC005521B4 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4B12D004108005521B4 /* FetchBusinessStatusUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -158,6 +204,7 @@
 		29F8A4912D003803005521B4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4AD2D0040B7005521B4 /* BusinessStatus.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -165,6 +212,7 @@
 		29F8A4922D00380F005521B4 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4B62D004B0B005521B4 /* BusinessStatusRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -172,8 +220,8 @@
 		29F8A4932D003A6A005521B4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4BC2D004DC8005521B4 /* Network */,
 				29F8A4982D003AD7005521B4 /* DataTrsnsfer */,
-				29F8A4972D003A91005521B4 /* Models */,
 				29F8A4922D00380F005521B4 /* Repositories */,
 			);
 			path = Data;
@@ -182,6 +230,8 @@
 		29F8A4942D003A72005521B4 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4602D0035E9005521B4 /* BusinessNumberValidateApp.swift */,
+				29F8A46B2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld */,
 			);
 			path = Applications;
 			sourceTree = "<group>";
@@ -189,6 +239,7 @@
 		29F8A4952D003A7A005521B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4642D0035ED005521B4 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -196,20 +247,16 @@
 		29F8A4962D003A87005521B4 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4AF2D0040D0005521B4 /* BusinessStatusRepository.swift */,
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		29F8A4972D003A91005521B4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		29F8A4982D003AD7005521B4 /* DataTrsnsfer */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4B82D004B51005521B4 /* BusinessStatusDTO.swift */,
+				29F8A4BA2D004BFF005521B4 /* ResponseDTO.swift */,
 			);
 			path = DataTrsnsfer;
 			sourceTree = "<group>";
@@ -219,7 +266,6 @@
 			children = (
 				29F8A49B2D003B3E005521B4 /* Views */,
 				29F8A49A2D003B39005521B4 /* Reducers */,
-				29F8A49C2D003B4E005521B4 /* Components */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -227,6 +273,7 @@
 		29F8A49A2D003B39005521B4 /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4A42D003ECD005521B4 /* BusinessStatusReducer.swift */,
 			);
 			name = Reducers;
 			sourceTree = "<group>";
@@ -234,15 +281,19 @@
 		29F8A49B2D003B3E005521B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A49D2D003D52005521B4 /* BusinessStatusView.swift */,
+				29F8A4A22D003EBD005521B4 /* LoadingView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		29F8A49C2D003B4E005521B4 /* Components */ = {
+		29F8A4BC2D004DC8005521B4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				29F8A4BD2D004DDB005521B4 /* APIClient.swift */,
+				29F8A4BF2D004DE6005521B4 /* Endpoint.swift */,
 			);
-			name = Components;
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +312,10 @@
 			dependencies = (
 			);
 			name = BusinessNumberValidate;
+			packageProductDependencies = (
+				29F8A4A02D003E91005521B4 /* ComposableArchitecture */,
+				29C4C9242D005F6C006A1D48 /* Swinject */,
+			);
 			productName = BusinessNumberValidate;
 			productReference = 29F8A45D2D0035E9005521B4 /* BusinessNumberValidate.app */;
 			productType = "com.apple.product-type.application";
@@ -333,6 +388,10 @@
 				Base,
 			);
 			mainGroup = 29F8A4542D0035E9005521B4;
+			packageReferences = (
+				29F8A49F2D003E91005521B4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				29C4C9232D005F6C006A1D48 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 29F8A45E2D0035E9005521B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,10 +434,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29F8A46A2D0035ED005521B4 /* Persistence.swift in Sources */,
-				29F8A4632D0035E9005521B4 /* ContentView.swift in Sources */,
+				29F8A4B72D004B0B005521B4 /* BusinessStatusRepositoryImpl.swift in Sources */,
+				29C4C92C2D005F9A006A1D48 /* PresentationAssembly.swift in Sources */,
+				29F8A4B22D004108005521B4 /* FetchBusinessStatusUseCase.swift in Sources */,
+				29F8A4BB2D004BFF005521B4 /* ResponseDTO.swift in Sources */,
 				29F8A46D2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld in Sources */,
+				29C4C92A2D005F90006A1D48 /* DomainAssembly.swift in Sources */,
+				29F8A4A52D003ECD005521B4 /* BusinessStatusReducer.swift in Sources */,
+				29F8A4B92D004B51005521B4 /* BusinessStatusDTO.swift in Sources */,
+				29F8A49E2D003D52005521B4 /* BusinessStatusView.swift in Sources */,
+				29F8A4B02D0040D0005521B4 /* BusinessStatusRepository.swift in Sources */,
 				29F8A4612D0035E9005521B4 /* BusinessNumberValidateApp.swift in Sources */,
+				29F8A4BE2D004DDB005521B4 /* APIClient.swift in Sources */,
+				29F8A4A32D003EBD005521B4 /* LoadingView.swift in Sources */,
+				29C4C9282D005F86006A1D48 /* DataAssembly.swift in Sources */,
+				29F8A4AE2D0040B7005521B4 /* BusinessStatus.swift in Sources */,
+				29C4C92E2D006164006A1D48 /* DependencyInjector.swift in Sources */,
+				29F8A4C02D004DE6005521B4 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +780,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29C4C9232D005F6C006A1D48 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		29F8A49F2D003E91005521B4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29C4C9242D005F6C006A1D48 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29C4C9232D005F6C006A1D48 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		29F8A4A02D003E91005521B4 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29F8A49F2D003E91005521B4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		29F8A46B2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld */ = {
