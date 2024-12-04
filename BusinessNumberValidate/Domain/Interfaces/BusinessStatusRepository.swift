@@ -8,5 +8,5 @@
 import Combine
 
 protocol BusinessStatusRepository {
-    func fetchBusinessStatus(for businessNumber: String) -> AnyPublisher<BusinessStatus, Error>
+    func fetchBusinessStatus(for businessNumber: String) -> AnyPublisher<BusinessStatus, BusinessError>
 }

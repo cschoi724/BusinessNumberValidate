@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol FetchBusinessStatusUseCase {
-    func execute(businessNumber: String) -> AnyPublisher<BusinessStatus, Error>
+    func execute(businessNumber: String) -> AnyPublisher<BusinessStatus, BusinessError>
 }
 
 struct FetchBusinessStatusUseCaseImpl: FetchBusinessStatusUseCase {
@@ -19,7 +19,7 @@ struct FetchBusinessStatusUseCaseImpl: FetchBusinessStatusUseCase {
         self.repository = repository
     }
 
-    func execute(businessNumber: String) -> AnyPublisher<BusinessStatus, Error> {
+    func execute(businessNumber: String) -> AnyPublisher<BusinessStatus, BusinessError> {
         return repository.fetchBusinessStatus(for: businessNumber)
     }
 }

@@ -12,7 +12,7 @@ struct Endpoint {
     let method: HTTPMethod
     let headers: [String: String]?
     let queryItems: [URLQueryItem]?
-    let body: Data?
+    let body: Any?
     
     var url: URL? {
         var components = URLComponents()
@@ -30,26 +30,19 @@ enum HTTPMethod: String {
 }
 
 extension Endpoint {
-    // 사업자 상태 조회를 위한 Endpoint 생성
     static func businessStatusEndpoint(businessNumbers: [String]) -> Endpoint {
         let bodyDict: [String: [String]] = ["b_no": businessNumbers]
-        let bodyData = try? JSONSerialization.data(withJSONObject: bodyDict)
-
         let headers = [
             "Content-Type": "application/json",
             "Authorization": "Infuser a/55NV04ZF/MTYBnVZurcRg6PCciclz50TrPlRiDw8dN1AvXeC9V1KjmHtUs/qtvZ1tigKvxiPA9cYoGWr/Efg=="
-        ]
-
-        let queryItems = [
-            URLQueryItem(name: "serviceKey", value: "a/55NV04ZF/MTYBnVZurcRg6PCciclz50TrPlRiDw8dN1AvXeC9V1KjmHtUs/qtvZ1tigKvxiPA9cYoGWr/Efg==")
         ]
 
         return Endpoint(
             path: "/api/nts-businessman/v1/status",
             method: .post,
             headers: headers,
-            queryItems: queryItems,
-            body: bodyData
+            queryItems: nil,
+            body: bodyDict
         )
     }
 }

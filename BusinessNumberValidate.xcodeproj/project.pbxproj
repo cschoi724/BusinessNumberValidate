@@ -16,7 +16,6 @@
 		29F8A4652D0035ED005521B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F8A4642D0035ED005521B4 /* Assets.xcassets */; };
 		29F8A4682D0035ED005521B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29F8A4672D0035ED005521B4 /* Preview Assets.xcassets */; };
 		29F8A46D2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A46B2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodeld */; };
-		29F8A4772D0035EE005521B4 /* BusinessNumberValidateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4762D0035EE005521B4 /* BusinessNumberValidateTests.swift */; };
 		29F8A4812D0035EE005521B4 /* BusinessNumberValidateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4802D0035EE005521B4 /* BusinessNumberValidateUITests.swift */; };
 		29F8A4832D0035EE005521B4 /* BusinessNumberValidateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4822D0035EE005521B4 /* BusinessNumberValidateUITestsLaunchTests.swift */; };
 		29F8A49E2D003D52005521B4 /* BusinessStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A49D2D003D52005521B4 /* BusinessStatusView.swift */; };
@@ -31,6 +30,10 @@
 		29F8A4BB2D004BFF005521B4 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4BA2D004BFF005521B4 /* ResponseDTO.swift */; };
 		29F8A4BE2D004DDB005521B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4BD2D004DDB005521B4 /* APIClient.swift */; };
 		29F8A4C02D004DE6005521B4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8A4BF2D004DE6005521B4 /* Endpoint.swift */; };
+		3BB589E32D0095F3008A93E1 /* BusinessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB589E22D0095F0008A93E1 /* BusinessError.swift */; };
+		3BB589E52D009773008A93E1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB589E42D00976C008A93E1 /* APIError.swift */; };
+		3BB589E82D00A48A008A93E1 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB589E72D00A487008A93E1 /* MockAPIClient.swift */; };
+		3BB589EB2D00A4B7008A93E1 /* BusinessStatusRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB589EA2D00A4B3008A93E1 /* BusinessStatusRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +64,6 @@
 		29F8A4672D0035ED005521B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		29F8A46C2D0035ED005521B4 /* BusinessNumberValidate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusinessNumberValidate.xcdatamodel; sourceTree = "<group>"; };
 		29F8A4722D0035EE005521B4 /* BusinessNumberValidateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessNumberValidateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29F8A4762D0035EE005521B4 /* BusinessNumberValidateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessNumberValidateTests.swift; sourceTree = "<group>"; };
 		29F8A47C2D0035EE005521B4 /* BusinessNumberValidateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessNumberValidateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F8A4802D0035EE005521B4 /* BusinessNumberValidateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessNumberValidateUITests.swift; sourceTree = "<group>"; };
 		29F8A4822D0035EE005521B4 /* BusinessNumberValidateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessNumberValidateUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -76,6 +78,10 @@
 		29F8A4BA2D004BFF005521B4 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
 		29F8A4BD2D004DDB005521B4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		29F8A4BF2D004DE6005521B4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3BB589E22D0095F0008A93E1 /* BusinessError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessError.swift; sourceTree = "<group>"; };
+		3BB589E42D00976C008A93E1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		3BB589E72D00A487008A93E1 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		3BB589EA2D00A4B3008A93E1 /* BusinessStatusRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatusRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +175,8 @@
 		29F8A4752D0035EE005521B4 /* BusinessNumberValidateTests */ = {
 			isa = PBXGroup;
 			children = (
-				29F8A4762D0035EE005521B4 /* BusinessNumberValidateTests.swift */,
+				3BB589E62D00A46D008A93E1 /* Mock */,
+				3BB589E92D00A4AC008A93E1 /* Tests */,
 			);
 			path = BusinessNumberValidateTests;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 		29F8A4912D003803005521B4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				3BB589E22D0095F0008A93E1 /* BusinessError.swift */,
 				29F8A4AD2D0040B7005521B4 /* BusinessStatus.swift */,
 			);
 			path = Entities;
@@ -291,9 +299,26 @@
 			isa = PBXGroup;
 			children = (
 				29F8A4BD2D004DDB005521B4 /* APIClient.swift */,
+				3BB589E42D00976C008A93E1 /* APIError.swift */,
 				29F8A4BF2D004DE6005521B4 /* Endpoint.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3BB589E62D00A46D008A93E1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3BB589E72D00A487008A93E1 /* MockAPIClient.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		3BB589E92D00A4AC008A93E1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3BB589EA2D00A4B3008A93E1 /* BusinessStatusRepositoryTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,10 +467,12 @@
 				29C4C92A2D005F90006A1D48 /* DomainAssembly.swift in Sources */,
 				29F8A4A52D003ECD005521B4 /* BusinessStatusReducer.swift in Sources */,
 				29F8A4B92D004B51005521B4 /* BusinessStatusDTO.swift in Sources */,
+				3BB589E52D009773008A93E1 /* APIError.swift in Sources */,
 				29F8A49E2D003D52005521B4 /* BusinessStatusView.swift in Sources */,
 				29F8A4B02D0040D0005521B4 /* BusinessStatusRepository.swift in Sources */,
 				29F8A4612D0035E9005521B4 /* BusinessNumberValidateApp.swift in Sources */,
 				29F8A4BE2D004DDB005521B4 /* APIClient.swift in Sources */,
+				3BB589E32D0095F3008A93E1 /* BusinessError.swift in Sources */,
 				29F8A4A32D003EBD005521B4 /* LoadingView.swift in Sources */,
 				29C4C9282D005F86006A1D48 /* DataAssembly.swift in Sources */,
 				29F8A4AE2D0040B7005521B4 /* BusinessStatus.swift in Sources */,
@@ -458,7 +485,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29F8A4772D0035EE005521B4 /* BusinessNumberValidateTests.swift in Sources */,
+				3BB589EB2D00A4B7008A93E1 /* BusinessStatusRepositoryTests.swift in Sources */,
+				3BB589E82D00A48A008A93E1 /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +650,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -651,6 +680,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

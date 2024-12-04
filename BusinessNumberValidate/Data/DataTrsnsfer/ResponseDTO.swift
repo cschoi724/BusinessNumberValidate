@@ -18,12 +18,12 @@ struct ResponseDTO<Result: Codable>: Codable {
         case data = "data"
     }
     
-    init(from decoder: Decoder) throws {
-        let container: KeyedDecodingContainer<ResponseDTO<Result>.CodingKeys> = try decoder.container(keyedBy: ResponseDTO<Result>.CodingKeys.self)
-        self.requestCnt = (try? container.decode(Int.self, forKey: ResponseDTO<Result>.CodingKeys.requestCnt)) ?? 0
-        self.statusCode = (try? container.decode(String.self, forKey: ResponseDTO<Result>.CodingKeys.statusCode)) ?? "0"
-        self.data = try? container.decodeIfPresent(Result.self, forKey: ResponseDTO<Result>.CodingKeys.data)
-    }
+//    init(from decoder: Decoder) throws {
+//        let container: KeyedDecodingContainer<ResponseDTO<Result>.CodingKeys> = try decoder.container(keyedBy: ResponseDTO<Result>.CodingKeys.self)
+//        self.requestCnt = (try? container.decode(Int.self, forKey: ResponseDTO<Result>.CodingKeys.requestCnt)) ?? 0
+//        self.statusCode = (try? container.decode(String.self, forKey: ResponseDTO<Result>.CodingKeys.statusCode)) ?? "0"
+//        self.data = try? container.decodeIfPresent(Result.self, forKey: ResponseDTO<Result>.CodingKeys.data)
+//    }
 }
 
 

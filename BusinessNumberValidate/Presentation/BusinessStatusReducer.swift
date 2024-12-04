@@ -9,9 +9,6 @@ import Foundation
 import ComposableArchitecture
 import Combine
 
-enum BusinessError: Error, Equatable {
-    case networkError(String)
-}
 
 struct BusinessStatusReducer: Reducer {
     struct State: Equatable {
@@ -24,7 +21,8 @@ struct BusinessStatusReducer: Reducer {
     enum Action {
         case updateBusinessNumber(String)
         case fetchBusinessStatus
-        case businessStatusResponse(Result<BusinessStatus, Error>)
+        case businessStatusResponse(Result<BusinessStatus, BusinessError>)
+        case cancelFetch
     }
 
     struct Environment {
@@ -51,7 +49,11 @@ struct BusinessStatusReducer: Reducer {
                         Action.businessStatusResponse(.success(result))
                     }
                     .catch { error in
-                        Just(Action.businessStatusResponse(.failure(error)))
+                        Just(
+                            Action.businessStatusResponse(
+                                .failure(error as? BusinessError ?? .unknownError("Unexpected error"))
+                            )
+                        )
                     }
                     .eraseToAnyPublisher()
             }
@@ -60,10 +62,19 @@ struct BusinessStatusReducer: Reducer {
             switch result {
             case .success(let businessStatus):
                 state.businessStatus = businessStatus
+                if businessStatus.bStt.isEmpty {
+                    state.errorMessage = "국세청에 등록되지 않은 사업자등록번호입니다."
+                } else {
+                    state.errorMessage = nil
+                }
+
             case .failure(let error):
-                state.errorMessage = error.localizedDescription
+                state.errorMessage = error.userFriendlyMessage
             }
             return .none
+        case .cancelFetch:
+            state.isLoading = false
+            return .cancel(id: "fetchBusinessStatus")
         }
     }
 }

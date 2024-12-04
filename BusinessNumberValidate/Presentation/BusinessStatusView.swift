@@ -31,17 +31,31 @@ struct BusinessStatusView: View {
                 .disabled(viewStore.businessNumber.isEmpty || viewStore.isLoading)
 
                 if let businessStatus = viewStore.businessStatus {
-                    Text("사업자 상태: \(businessStatus.bStt)")
-                        .padding()
+                    if viewStore.errorMessage != nil {
+                          Text(viewStore.errorMessage!)
+                              .foregroundColor(.red)
+                              .padding()
+                      } else {
+                          VStack(alignment: .leading, spacing: 8) {
+                              Text("사업자 상태: \(businessStatus.bStt.isEmpty ? "알 수 없음" : businessStatus.bStt)")
+                              Text("과세 유형: \(businessStatus.taxType)")
+                          }
+                          .padding()
+                      }
                 }
-
-                if let errorMessage = viewStore.errorMessage {
+                if let errorMessage = viewStore.errorMessage, viewStore.businessStatus == nil {
                     Text("오류: \(errorMessage)")
                         .foregroundColor(.red)
                         .padding()
                 }
             }
             .padding()
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                viewStore.send(.cancelFetch)
+            }
+            .onDisappear {
+                viewStore.send(.cancelFetch)
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol NetworkService {
-    func request<T: Decodable>(_ endpoint: Endpoint) -> AnyPublisher<T, Error>
+    func request<T: Decodable>(_ endpoint: Endpoint) -> AnyPublisher<T, APIError>
 }
 
 final class APIClient: NetworkService {
@@ -19,9 +19,9 @@ final class APIClient: NetworkService {
         self.session = session
     }
 
-    func request<T: Decodable>(_ endpoint: Endpoint) -> AnyPublisher<T, Error> {
+    func request<T: Decodable>(_ endpoint: Endpoint) -> AnyPublisher<T, APIError> {
         guard let url = endpoint.url else {
-            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+            return Fail(error: .invalidURL).eraseToAnyPublisher()
         }
 
         var request = URLRequest(url: url)
@@ -29,7 +29,12 @@ final class APIClient: NetworkService {
         request.allHTTPHeaderFields = endpoint.headers
         
         if let body = endpoint.body {
-            request.httpBody = body
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            } catch {
+                return Fail(error: .decodingError("Failed to serialize JSON body: \(error.localizedDescription)")).eraseToAnyPublisher()
+            }
         }
         
         return Future { [weak self, request] promise in
@@ -38,14 +43,21 @@ final class APIClient: NetworkService {
             Task {
                 do {
                     let (data, response) = try await self.session.data(for: request)
-                    guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
-                        throw URLError(.badServerResponse)
+                    guard let httpResponse = response as? HTTPURLResponse else {
+                        throw APIError.badServerResponse(statusCode: 0)
                     }
-
-                    let decodedData = try JSONDecoder().decode(T.self, from: data)
-                    promise(.success(decodedData))
-                } catch {
+                    
+                    switch httpResponse.statusCode {
+                    case 200..<300:
+                        let decodedData = try JSONDecoder().decode(T.self, from: data)
+                        promise(.success(decodedData))
+                    default:
+                        throw APIError.badServerResponse(statusCode: httpResponse.statusCode)
+                    }
+                } catch let error as APIError {
                     promise(.failure(error))
+                } catch {
+                    promise(.failure(.networkError(error)))
                 }
             }
         }
