@@ -6,6 +6,9 @@
 
 ### 사용한 기술스택
 - SwiftUI<br>
+- CoreData<br>
+- async-await<br>
+- Combine<br>
 - TCA <br>
 - Clean Architecture<br>
 
