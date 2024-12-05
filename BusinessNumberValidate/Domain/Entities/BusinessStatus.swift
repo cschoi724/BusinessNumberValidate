@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BusinessStatus: Equatable {
+public struct BusinessStatus: Equatable {
     let bNo: String            // 사업자 번호
     let bStt: String           // 사업 상태
     let bSttCd: String         // 사업 상태 코드
@@ -19,4 +19,5 @@ struct BusinessStatus: Equatable {
     let invoiceApplyDt: String   // 계산서 적용일
     let rbfTaxType: String       // 환급 세금 유형
     let rbfTaxTypeCd: String     // 환급 세금 유형 코드
+    let lastUpdated: Date?        // 마지막 업데이트 시간
 }

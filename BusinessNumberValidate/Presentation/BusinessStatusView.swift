@@ -10,52 +10,56 @@ import ComposableArchitecture
 
 struct BusinessStatusView: View {
     let store: StoreOf<BusinessStatusReducer>
-
+    @State private var showError: Bool = false
+    @State private var errorMessage: String = ""
+    
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
-            VStack(spacing: 16) {
-                TextField("사업자 번호를 입력하세요", text: viewStore.binding(
-                    get: \.businessNumber,
-                    send: BusinessStatusReducer.Action.updateBusinessNumber
-                ))
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-                if viewStore.isLoading {
-                    ProgressView("Loading...")
+            GeometryReader { geometry in
+                ZStack {
+                    VStack(spacing: 16) {
+                        MainContentView(viewStore: viewStore, geometry: geometry)
+             
+                        StatusOrErrorView(
+                            businessStatus: viewStore.businessStatus,
+                            errorMessage: viewStore.errorMessage
+                        )
+                        .padding(.horizontal, geometry.size.width * 0.05)
+                        Spacer(minLength: geometry.size.height * 0.05)
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .background(Color.yellow.opacity(0.1))
+                    LoadingView(isLoading: viewStore.binding(
+                        get: \.isLoading,
+                        send: .cancelFetch
+                    ))
+                    if showError {
+                        ErrorToastView(message: errorMessage)
+                            .transition(.opacity)
+                            .animation(.easeInOut, value: showError)
+                    }
                 }
-
-                Button("사업자 조회") {
-                    viewStore.send(.fetchBusinessStatus)
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                    viewStore.send(.cancelFetch)
                 }
-                .disabled(viewStore.businessNumber.isEmpty || viewStore.isLoading)
-
-                if let businessStatus = viewStore.businessStatus {
-                    if viewStore.errorMessage != nil {
-                          Text(viewStore.errorMessage!)
-                              .foregroundColor(.red)
-                              .padding()
-                      } else {
-                          VStack(alignment: .leading, spacing: 8) {
-                              Text("사업자 상태: \(businessStatus.bStt.isEmpty ? "알 수 없음" : businessStatus.bStt)")
-                              Text("과세 유형: \(businessStatus.taxType)")
-                          }
-                          .padding()
-                      }
+                .onDisappear {
+                    viewStore.send(.cancelFetch)
                 }
-                if let errorMessage = viewStore.errorMessage, viewStore.businessStatus == nil {
-                    Text("오류: \(errorMessage)")
-                        .foregroundColor(.red)
-                        .padding()
+                .onChange(of: viewStore.errorMessage) { newValue in
+                    if let newValue = newValue {
+                        errorMessage = newValue
+                        withAnimation {
+                            showError = true
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                            withAnimation {
+                                showError = false
+                            }
+                        }
+                    }
                 }
-            }
-            .padding()
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                viewStore.send(.cancelFetch)
-            }
-            .onDisappear {
-                viewStore.send(.cancelFetch)
             }
         }
     }
 }
+

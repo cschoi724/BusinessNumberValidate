@@ -65,3 +65,20 @@ final class APIClient: NetworkService {
         .eraseToAnyPublisher()
     }
 }
+
+extension Publisher {
+    func retryWithExponentialBackoff(retries: Int, initialDelay: TimeInterval) -> AnyPublisher<Output, Failure> {
+        self.catch { error -> AnyPublisher<Output, Failure> in
+            guard retries > 0 else {
+                return Fail(error: error).eraseToAnyPublisher()
+            }
+
+            let delay = initialDelay * pow(2.0, Double(3 - retries))
+            return Just(())
+                .delay(for: .seconds(delay), scheduler: DispatchQueue.global())
+                .flatMap { self.retryWithExponentialBackoff(retries: retries - 1, initialDelay: initialDelay) }
+                .eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
+    }
+}

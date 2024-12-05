@@ -12,10 +12,15 @@ public struct DataAssembly: Assembly {
         container.register(NetworkService.self) { _ in
             return APIClient(session: .shared)
         }
-        
+
+        container.register(BusinessStatusStorageProtocol.self) { resolver in
+            return BusinessStatusStorage()
+        }
+
         container.register(BusinessStatusRepository.self) { resolver in
             return BusinessStatusRepositoryImpl(
-                apiClient: resolver.resolve(NetworkService.self)!
+                apiClient: resolver.resolve(NetworkService.self)!,
+                storage: resolver.resolve(BusinessStatusStorageProtocol.self)!
             )
         }
     }

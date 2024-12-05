@@ -33,21 +33,6 @@ struct BusinessStatusDTO: Codable {
         case rbfTaxType = "rbf_tax_type"
         case rbfTaxTypeCd = "rbf_tax_type_cd"
     }
-    
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.bNo = (try? container.decode(String.self, forKey: .bNo)) ?? ""
-//        self.bStt = (try? container.decode(String.self, forKey: .bStt)) ?? ""
-//        self.bSttCd = (try? container.decode(String.self, forKey: .bSttCd)) ?? ""
-//        self.taxType = (try? container.decode(String.self, forKey: .taxType)) ?? ""
-//        self.taxTypeCd = (try? container.decode(String.self, forKey: .taxTypeCd)) ?? ""
-//        self.endDt = (try? container.decode(String.self, forKey: .endDt)) ?? ""
-//        self.utccYn = (try? container.decode(String.self, forKey: .utccYn)) ?? ""
-//        self.taxTypeChangeDt = (try? container.decode(String.self, forKey: .taxTypeChangeDt)) ?? ""
-//        self.invoiceApplyDt = (try? container.decode(String.self, forKey: .invoiceApplyDt)) ?? ""
-//        self.rbfTaxType = (try? container.decode(String.self, forKey: .rbfTaxType)) ?? ""
-//        self.rbfTaxTypeCd = (try? container.decode(String.self, forKey: .rbfTaxTypeCd)) ?? ""
-//    }
 }
 
 extension BusinessStatusDTO {
@@ -63,7 +48,8 @@ extension BusinessStatusDTO {
             taxTypeChangeDt: taxTypeChangeDt,
             invoiceApplyDt: invoiceApplyDt,
             rbfTaxType: rbfTaxType,
-            rbfTaxTypeCd: rbfTaxTypeCd
+            rbfTaxTypeCd: rbfTaxTypeCd,
+            lastUpdated: nil
         )
     }
 }
